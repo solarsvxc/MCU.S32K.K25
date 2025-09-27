@@ -18,7 +18,6 @@
 uint32_t ADC_rawResult;
 uint16_t ADC_mvResult;
 
-
 /**
  * @brief 
  * 
@@ -32,6 +31,7 @@ int main(void)
     static int range2 = 341;
     static int range3 = 682;
     static int range4 = 1024;
+
     /*<! Disable bus clock to set clock source PCS */
     IP_PCC->PCCn[PCC_ADC0_INDEX] &= ~PCC_PCCn_CGC_MASK;
     /*<! Peripheral Clock Source Select,  011b Clock option 3 is FIRCDIV2_CLK*/
