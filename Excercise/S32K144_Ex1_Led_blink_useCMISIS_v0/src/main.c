@@ -40,7 +40,6 @@ static void delay_ms(uint32_t delayms)
     {
         while ((SYST_CSR & CTRL_COUNTFLAG) == 0);
     }
-
 }
 
 int main(void)
@@ -52,20 +51,15 @@ int main(void)
     IP_PORTD->PCR[BLUE]             = PORT_PCR_MUX(1);
     IP_PORTD->PCR[RED]              = PORT_PCR_MUX(1);
     IP_PORTD->PCR[GREEN]            = PORT_PCR_MUX(1);
-
-    IP_PTD->PDDR                    |= (1U<<BLUE);
-    IP_PTD->PDDR                    |= (1U<<RED);
-    IP_PTD->PDDR                    |= (1U<<GREEN);
-
+    
     while (1)
     {
-        /* code */
-        IP_PTD->PTOR                ^= (1U<<BLUE);
-        delay_ms(3000);
-        IP_PTD->PTOR                ^= (1U<<GREEN);
-        delay_ms(3000);
-        IP_PTD->PTOR                ^= (1U<<RED);
+    IP_PTD->PDDR                 = (1U<<BLUE); 
+    delay_ms(3000);
+    IP_PTD->PDDR                 = (1U<<GREEN);
+    delay_ms(3000);
+    IP_PTD->PDDR                 = (1U<<RED);
+    delay_ms(3000);
     }
     
-
 }
