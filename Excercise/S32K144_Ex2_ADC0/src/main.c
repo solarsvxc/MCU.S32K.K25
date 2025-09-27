@@ -1,6 +1,6 @@
 /**
  * @file main.c
- * @author your name (you@domain.com)
+ * @author duongnn (you@domain.com)
  * @brief 
  * @version 0.1
  * @date 2025-09-26
@@ -22,7 +22,7 @@ uint16_t ADC_mvResult;
 /**
  * @brief 
  * 
- * @return int 
+ * @return 
  */
 int main(void)
 {
