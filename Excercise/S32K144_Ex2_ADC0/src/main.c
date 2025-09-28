@@ -16,7 +16,6 @@
 #define RED_D      15
 
 uint32_t ADC_rawResult;
-uint16_t ADC_mvResult;
 
 /**
  * @brief 
@@ -25,8 +24,6 @@ uint16_t ADC_mvResult;
  */
 int main(void)
 {
-
-
     static int range1 = 0;
     static int range2 = 341;
     static int range3 = 682;
@@ -91,7 +88,7 @@ int main(void)
     // IP_PTD->PDDR                    |= (1U<<GREEN_D);
     // IP_PTD->PDDR                    |= (1U<<RED_D);
 
- while(1)
+ while (1)
     {
         /* Initiate new conversion by writing to ADC0_SC1A(ADCH) */
         /* ADCH = 12: External channel 12 as input */
