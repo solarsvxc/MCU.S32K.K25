@@ -27,8 +27,6 @@ static int32_t GPIO_Setup (ARM_GPIO_Pin_t pin, ARM_GPIO_SignalEvent_t cb_event)
 
   if (PIN_IS_AVAILABLE(pin)) 
   {
-
-    
     
   } else {
     result = ARM_GPIO_ERROR_PIN;

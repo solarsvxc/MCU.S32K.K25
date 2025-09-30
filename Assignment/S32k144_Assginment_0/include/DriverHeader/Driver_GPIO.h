@@ -18,7 +18,7 @@ extern "C"
 
 #include "Driver_Common.h"
 #include "S32K144.h" 
-
+typedef GPIO_Type *GPIO_MODULE;
 /**
  * @brief  GPIO Pin
  * 
