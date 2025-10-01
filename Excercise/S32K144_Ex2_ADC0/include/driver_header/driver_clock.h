@@ -11,6 +11,6 @@
 #include "S32K144.h"
 
 void init_SOSC_8MHz(void);
-void
+void init_SPLL_160Mhz(void);
 
 #endif /* DRIVER_HEADER_DRIVER_CLOCK_H_ */
