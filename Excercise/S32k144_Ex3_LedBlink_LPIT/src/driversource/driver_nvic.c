@@ -18,7 +18,7 @@ void NVIC_EnableIRQ(IRQn_Type IRQn)
  */
 void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
 {
-    IP_NVIC->IP[IRQn]   = priority;
+    IP_NVIC->IP[IRQn]   |= priority;
 }
 
 /**

@@ -39,6 +39,7 @@ void lpit0_ch0_init(void)
     IP_PCC->PCCn[PCC_LPIT_INDEX]   |= PCC_PCCn_CGC_MASK;
     /* Wait 4 clock cycles. How i know exactly ??! */
     for (int i = 0; i < 100; i++){}
+    
     /* DBG_EN   = 0: Timer channels stop in Debug mode */
     /* DOZE_EN  = 0: Timer channels are stopped in DOZE mode */
     /* SW_RST   = 0: SW reset does not reset timer channels and registers */
@@ -111,6 +112,7 @@ int main(void)
 
     IP_PCC->PCCn[PCC_PORTD_INDEX]  &= ~PCC_PCCn_CGC_MASK;
     IP_PCC->PCCn[PCC_PORTD_INDEX]  |=  PCC_PCCn_CGC_MASK;
+    
     IP_PORTD->PCR[BLUE]             = PORT_PCR_MUX(1);
     IP_PORTD->PCR[RED]              = PORT_PCR_MUX(1);
     IP_PORTD->PCR[GREEN]            = PORT_PCR_MUX(1);
@@ -122,6 +124,7 @@ int main(void)
     /*0x10 = piority level 0 (highest) .... 0xF0 = piority level 15 (lowest) */
     NVIC_SetPriority(LPIT0_Ch0_IRQn,0x10);
     NVIC_ClearPendingIRQ(LPIT0_Ch0_IRQn);
+    
     lpit0_ch0_init(); // stuck can Break at address "0x608ff610" with no debug information available, or outside of program code.
     lpit0_handler();
 
