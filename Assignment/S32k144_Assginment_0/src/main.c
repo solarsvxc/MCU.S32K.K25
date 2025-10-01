@@ -26,6 +26,7 @@ int main(void)
     PORTx_MuxControl(IP_PORTD,PORT_MUX_GPIO,GREEN);
     
     //TODO: setup gpio,
+    
 
 
 }
